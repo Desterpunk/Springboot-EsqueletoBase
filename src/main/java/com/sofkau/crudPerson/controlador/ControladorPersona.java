@@ -32,4 +32,9 @@ public class ControladorPersona {
     public void borrar(@RequestBody Integer id){
         servicio.borrar(id);
     }
+
+    @PostMapping(value = "/actualizarPersona")
+    public Persona actualizarPersona(@RequestBody Persona persona){
+        return servicio.actualizar(persona);
+    }
 }
