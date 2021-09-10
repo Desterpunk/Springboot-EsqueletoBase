@@ -5,6 +5,8 @@ import com.sofkau.crudPerson.servicios.InterfazServiciosPersona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.criteria.CriteriaBuilder;
+
 @RestController
 @RequestMapping("api")
 public class ControladorPersona {
@@ -24,5 +26,10 @@ public class ControladorPersona {
     @GetMapping(value = "/listarId")
     public Persona listarId(@RequestBody Integer id){
         return servicio.listarId(id);
+    }
+
+    @DeleteMapping(value = "/borrar")
+    public void borrar(@RequestBody Integer id){
+        servicio.borrar(id);
     }
 }
