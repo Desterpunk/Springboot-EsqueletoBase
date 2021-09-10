@@ -20,4 +20,9 @@ public class ControladorPersona {
     public Persona guardarPersona(@RequestBody Persona persona){
         return servicio.guardar(persona);
     }
+
+    @GetMapping(value = "/listarId")
+    public Persona listarId(@RequestBody Integer id){
+        return servicio.listarId(id);
+    }
 }

@@ -20,7 +20,7 @@ public class ServiciosPersona implements InterfazServiciosPersona{
 
     @Override
     public Persona listarId(Integer id) {
-        return null;
+        return data.findById(id).get();
     }
 
     @Override
