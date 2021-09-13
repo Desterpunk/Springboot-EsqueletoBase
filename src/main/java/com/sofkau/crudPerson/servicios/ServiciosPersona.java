@@ -35,6 +35,10 @@ public class ServiciosPersona implements InterfazServiciosPersona{
 
     @Override
     public Persona actualizar(Persona persona) {
-        return data.save(persona);
+        if (data.findById(persona.getId()).isPresent()){
+            data.save(persona);
+            return data.save(persona);
+        }
+        return data.findById(persona.getId()).get();
     }
 }
